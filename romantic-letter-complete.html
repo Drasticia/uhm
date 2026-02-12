@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>A Letter For You 💌</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Greeting Screen -->
+<div class="greeting-screen" id="greetingScreen">
+  <div class="greeting-card">
+    <div class="greeting-text">
+      Halooo <span class="name">Tsal</span> atau biasanya aku panggil kamu <span class="nickname">ade</span> ehe. 💕<br><br>
+      Aku punya letter buat kamu, semoga kamu suka yaa~ 🌸
+    </div>
+    <div class="button-container" id="buttonContainer">
+      <button class="btn btn-yes" id="btnYes">Mau baca</button>
+      <button class="btn btn-no" id="btnNo">Buka aja</button>
+    </div>
+  </div>
+</div>
+
+<!-- Background Stars -->
+<div class="stars" id="stars"></div>
+
+<!-- Moon -->
+<div class="moon" id="moon"></div>
+
+<!-- Cloud -->
+<div class="cloud cloud1" id="cloud"></div>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+  <source src="your-music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Envelope -->
+<div class="envelope-wrapper" id="envelopeWrapper">
+  <div class="envelope">
+    <div class="envelope-body"></div>
+    <div class="paper">
+      <div class="paper-content">
+        <div class="paper-icon">💌</div>
+        <div>Click to Open</div>
+      </div>
+    </div>
+    <div class="envelope-flap"></div>
+    <div class="heart-seal">❤️</div>
+  </div>
+</div>
+
+<!-- Main Letter Content -->
+<div class="main" id="mainContent">
+  <div class="card">
+    <button class="close-btn" id="closeBtn">✕</button>
+    
+    <!-- GIF Section - GANTI URL GIF DI SINI -->
+    <div class="gif-container">
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnV5dGE5ZWo0Ym5pYTJ5eWJiNnF3aXZlMzRoYXN4Ym5jZm5xN2MzMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6Zt6ML6BklcajjsA/giphy.gif" alt="Love GIF">
+    </div>
+    
+    <h1>For You ✨</h1>
+    <div class="message">
+      I didn't rush writing this.<br>
+      Some things deserve patience.<br>
+      And you… deserve something sincere.
+      <br><br>
+      In a world that keeps moving,<br>
+      you are the calm I want to stay in.
+      <br><br>
+      Every moment with you feels like<br>
+      the universe pausing just for us.
+      <br><br>
+      You are the poetry I never knew<br>
+      I was searching for.
+    </div>
+    <div class="signature">With all my heart 💕</div>
+  </div>
+</div>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
