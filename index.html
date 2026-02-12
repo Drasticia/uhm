@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Just For You</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  background: linear-gradient(135deg,#1f1f2e,#2e2e3f);
+  color:white;
+  font-family:'Montserrat',sans-serif;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+section{
+  padding:100px 20px;
+}
+
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;
+  font-weight:600;
+}
+
+.card{
+  max-width:600px;
+  margin:40px auto;
+  padding:40px;
+  background:rgba(255,255,255,0.08);
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+}
+
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.primary{
+  background:#ffffff;
+  color:#1f1f2e;
+}
+
+.primary:hover{
+  transform:scale(1.1);
+}
+
+#typing{
+  min-height:80px;
+}
+
+#question{
+  position:relative;
+  height:200px;
+}
+
+#yesBtn{
+  position:absolute;
+}
+
+#noBtn{
+  margin-top:80px;
+}
+
+.fade{
+  opacity:0;
+  transition:1.2s;
+}
+
+.show{
+  opacity:1;
+}
+</style>
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="your-music.mp3" type="audio/mpeg">
+</audio>
+
+<section>
+  <h1>I Made This For You</h1>
+  <button class="primary" onclick="startExperience()">Open</button>
+</section>
+
+<section id="letter" class="fade">
+  <div class="card">
+    <h2>For You 🤍</h2>
+    <p id="typing"></p>
+  </div>
+</section>
+
+<section id="questionSection" class="fade">
+  <div class="card">
+    <h2>So…</h2>
+    <p>Will you be my Valentine?</p>
+    <div id="question">
+      <button class="primary" id="yesBtn">Yes 🤍</button>
+      <button class="primary" id="noBtn" onclick="acceptLove()">Always</button>
+    </div>
+    <p id="result"></p>
+  </div>
+</section>
+
+<script>
+function startExperience(){
+  document.getElementById("letter").scrollIntoView({behavior:"smooth"});
+  document.getElementById("bgMusic").play();
+}
+
+const text = "I don’t know how to say this perfectly. But being with you feels calm. Soft. Safe. You make ordinary days feel warmer. And whatever this is… I’m grateful for it. I’m grateful for you.";
+let i=0;
+function typeEffect(){
+  if(i < text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeEffect,40);
+  }
+}
+typeEffect();
+
+function acceptLove(){
+  document.getElementById("result").innerHTML="You have no idea how happy that makes me 🤍";
+}
+
+// Yes button runs away 😏
+const yesBtn = document.getElementById("yesBtn");
+yesBtn.addEventListener("mouseover", ()=>{
+  const x = Math.random() * 300;
+  const y = Math.random() * 120;
+  yesBtn.style.left = x + "px";
+  yesBtn.style.top = y + "px";
+});
+
+// fade on scroll
+const faders=document.querySelectorAll(".fade");
+window.addEventListener("scroll",()=>{
+  faders.forEach(el=>{
+    const rect=el.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+      el.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
