@@ -1,4 +1,3 @@
-// Extracted from romantic-letter-complete.html
 // Elements
 const body = document.body;
 const greetingScreen = document.getElementById("greetingScreen");
@@ -175,4 +174,3 @@ closeBtn.addEventListener("click", function(e) {
 		opened = false;
 	}, 600);
 });
-
