@@ -440,9 +440,12 @@ body.sky-mode {
 	position: relative;
 	text-align: center;
 	color: white;
-	overflow: hidden;
+	overflow-y: auto;
+	overflow-x: hidden;
 	display: flex;
 	flex-direction: column;
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
 }
 
 @keyframes fadeInUp {
@@ -513,46 +516,37 @@ h1 {
 	50% { filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.8)); }
 }
 
-/* ===== SCROLLABLE MESSAGE ===== */
+/* ===== MESSAGE ===== */
 .message {
 	font-size: 18px;
 	color: rgba(255, 255, 255, 0.95);
 	font-weight: 300;
 	letter-spacing: 0.5px;
 	text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-	max-height: 400px;
-	overflow-y: auto;
-	padding-right: 15px;
 	margin-bottom: 10px;
 	flex: 1;
-	overflow-x: hidden;
 }
 
 /* Custom Scrollbar for Webkit browsers (Chrome, Safari, Edge) */
-.message::-webkit-scrollbar {
+.card::-webkit-scrollbar {
 	width: 8px;
 }
 
-.message::-webkit-scrollbar-track {
+.card::-webkit-scrollbar-track {
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 10px;
 	margin: 5px 0;
 }
 
-.message::-webkit-scrollbar-thumb {
+.card::-webkit-scrollbar-thumb {
 	background: rgba(255, 255, 255, 0.3);
 	border-radius: 10px;
 	transition: background 0.3s ease;
 }
 
-.message::-webkit-scrollbar-thumb:hover {
-	background: rgba(255, 255, 255, 0.5);
-}
-
 /* Custom Scrollbar for Firefox */
-.message {
-	scrollbar-width: thin;
-	scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
+.card::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.5);
 }
 
 .signature {
